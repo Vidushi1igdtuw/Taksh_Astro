@@ -19,6 +19,17 @@
       "tier": "pro",
       "createdAt": "2026-02-15T10:30:00.000Z",
       "updatedAt": "2026-02-15T10:30:00.000Z"
+    },
+    {
+      "id": "usr_1795451448898_rma2lk",
+      "name": "Vidushi",
+      "email": "v@gmail.com",
+      "passwordHash": "$2b$10$aoOEuefBxpSTTCMC1fRWW.jcydc6JtG3Jh65R7OUSV71u9bAp7Hru",
+      "role": "user",
+      "tier": "free",
+      "createdAt": "2026-11-23T16:30:48.899Z",
+      "updatedAt": "2026-11-23T16:30:48.938Z",
+      "savedBirthProfileId": "prof_1795451448932_llwrx7"
     }
   ],
   "birthProfiles": [
@@ -35,6 +46,491 @@
       "timezone": 5.5,
       "gender": "Male",
       "createdAt": "2026-02-15T10:35:00.000Z"
+    },
+    {
+      "id": "prof_1795451448932_llwrx7",
+      "userId": "usr_1795451448898_rma2lk",
+      "name": "Vidushi",
+      "birthDate": "1998-05-15",
+      "birthTime": "08:30",
+      "place": "New Delhi",
+      "country": "India",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "timezone": 5.5,
+      "gender": "Female",
+      "chartData": {
+        "ayanamsaName": "Lahiri (Chitrapaksha)",
+        "ayanamsaValue": 23.834297707088517,
+        "ayanamsaDms": "23° 50' 03\"",
+        "lagna": {
+          "tropicalLongitude": 97.70112178895604,
+          "siderealLongitude": 73.86682408186755,
+          "signId": 3,
+          "signName": "Gemini",
+          "signSanskrit": "Mithuna",
+          "signLord": "Mercury",
+          "degreeInSign": 13.866824081867549,
+          "dms": "13° 52' 01\"",
+          "nakshatraName": "Ardra",
+          "nakshatraLord": "Rahu",
+          "pada": 3
+        },
+        "moonSign": {
+          "signId": 9,
+          "signName": "Sagittarius",
+          "signSanskrit": "Dhanu",
+          "nakshatraName": "Mula",
+          "nakshatraLord": "Ketu",
+          "pada": 4,
+          "degreeInSign": 10.582752539103353
+        },
+        "sunSign": {
+          "signId": 2,
+          "signName": "Taurus",
+          "signSanskrit": "Vrishabha",
+          "degreeInSign": 0.26779205064292455
+        },
+        "planets": [
+          {
+            "name": "Sun",
+            "sanskrit": "Surya",
+            "tropicalLongitude": 54.10208975773143,
+            "siderealLongitude": 30.267792050642925,
+            "signId": 2,
+            "signName": "Taurus",
+            "signSanskrit": "Vrishabha",
+            "signLord": "Venus",
+            "degreeInSign": 0.26779205064292455,
+            "dms": "0° 16' 04\"",
+            "nakshatraId": 3,
+            "nakshatraName": "Krittika",
+            "nakshatraLord": "Sun",
+            "pada": 2,
+            "house": 12,
+            "isRetrograde": false,
+            "dignity": "Enemy",
+            "navamsaSignId": 10,
+            "navamsaSignName": "Capricorn"
+          },
+          {
+            "name": "Moon",
+            "sanskrit": "Chandra",
+            "tropicalLongitude": 274.4170502461919,
+            "siderealLongitude": 250.58275253910335,
+            "signId": 9,
+            "signName": "Sagittarius",
+            "signSanskrit": "Dhanu",
+            "signLord": "Jupiter",
+            "degreeInSign": 10.582752539103353,
+            "dms": "10° 34' 58\"",
+            "nakshatraId": 19,
+            "nakshatraName": "Mula",
+            "nakshatraLord": "Ketu",
+            "pada": 4,
+            "house": 7,
+            "isRetrograde": false,
+            "dignity": "Neutral",
+            "navamsaSignId": 4,
+            "navamsaSignName": "Cancer"
+          },
+          {
+            "name": "Mars",
+            "sanskrit": "Mangala",
+            "tropicalLongitude": 53.54105407582973,
+            "siderealLongitude": 29.706756368741196,
+            "signId": 1,
+            "signName": "Aries",
+            "signSanskrit": "Mesha",
+            "signLord": "Mars",
+            "degreeInSign": 29.706756368741196,
+            "dms": "29° 42' 24\"",
+            "nakshatraId": 3,
+            "nakshatraName": "Krittika",
+            "nakshatraLord": "Sun",
+            "pada": 1,
+            "house": 11,
+            "isRetrograde": false,
+            "dignity": "Own",
+            "navamsaSignId": 9,
+            "navamsaSignName": "Sagittarius"
+          },
+          {
+            "name": "Mercury",
+            "sanskrit": "Budha",
+            "tropicalLongitude": 30.054060662658376,
+            "siderealLongitude": 6.219762955569877,
+            "signId": 1,
+            "signName": "Aries",
+            "signSanskrit": "Mesha",
+            "signLord": "Mars",
+            "degreeInSign": 6.219762955569877,
+            "dms": "6° 13' 11\"",
+            "nakshatraId": 1,
+            "nakshatraName": "Ashwini",
+            "nakshatraLord": "Ketu",
+            "pada": 2,
+            "house": 11,
+            "isRetrograde": false,
+            "dignity": "Neutral",
+            "navamsaSignId": 2,
+            "navamsaSignName": "Taurus"
+          },
+          {
+            "name": "Jupiter",
+            "sanskrit": "Guru",
+            "tropicalLongitude": 352.10924293120434,
+            "siderealLongitude": 328.27494522411575,
+            "signId": 11,
+            "signName": "Aquarius",
+            "signSanskrit": "Kumbha",
+            "signLord": "Saturn",
+            "degreeInSign": 28.274945224115754,
+            "dms": "28° 16' 30\"",
+            "nakshatraId": 25,
+            "nakshatraName": "Purva Bhadrapada",
+            "nakshatraLord": "Jupiter",
+            "pada": 3,
+            "house": 9,
+            "isRetrograde": false,
+            "dignity": "Neutral",
+            "navamsaSignId": 3,
+            "navamsaSignName": "Gemini"
+          },
+          {
+            "name": "Venus",
+            "sanskrit": "Shukra",
+            "tropicalLongitude": 12.854765402362295,
+            "siderealLongitude": 349.0204676952738,
+            "signId": 12,
+            "signName": "Pisces",
+            "signSanskrit": "Meena",
+            "signLord": "Jupiter",
+            "degreeInSign": 19.020467695273794,
+            "dms": "19° 01' 14\"",
+            "nakshatraId": 27,
+            "nakshatraName": "Revati",
+            "nakshatraLord": "Mercury",
+            "pada": 1,
+            "house": 10,
+            "isRetrograde": false,
+            "dignity": "Exalted",
+            "navamsaSignId": 9,
+            "navamsaSignName": "Sagittarius"
+          },
+          {
+            "name": "Saturn",
+            "sanskrit": "Shani",
+            "tropicalLongitude": 27.26580460941719,
+            "siderealLongitude": 3.4315069023286924,
+            "signId": 1,
+            "signName": "Aries",
+            "signSanskrit": "Mesha",
+            "signLord": "Mars",
+            "degreeInSign": 3.4315069023286924,
+            "dms": "3° 25' 53\"",
+            "nakshatraId": 1,
+            "nakshatraName": "Ashwini",
+            "nakshatraLord": "Ketu",
+            "pada": 2,
+            "house": 11,
+            "isRetrograde": false,
+            "dignity": "Debilitated",
+            "navamsaSignId": 2,
+            "navamsaSignName": "Taurus"
+          },
+          {
+            "name": "Rahu",
+            "sanskrit": "Rahu",
+            "tropicalLongitude": 156.62482206209427,
+            "siderealLongitude": 132.79052435500574,
+            "signId": 5,
+            "signName": "Leo",
+            "signSanskrit": "Simha",
+            "signLord": "Sun",
+            "degreeInSign": 12.790524355005743,
+            "dms": "12° 47' 26\"",
+            "nakshatraId": 10,
+            "nakshatraName": "Magha",
+            "nakshatraLord": "Ketu",
+            "pada": 4,
+            "house": 3,
+            "isRetrograde": true,
+            "dignity": "Neutral",
+            "navamsaSignId": 4,
+            "navamsaSignName": "Cancer"
+          },
+          {
+            "name": "Ketu",
+            "sanskrit": "Ketu",
+            "tropicalLongitude": 336.62482206209427,
+            "siderealLongitude": 312.79052435500574,
+            "signId": 11,
+            "signName": "Aquarius",
+            "signSanskrit": "Kumbha",
+            "signLord": "Saturn",
+            "degreeInSign": 12.790524355005743,
+            "dms": "12° 47' 26\"",
+            "nakshatraId": 24,
+            "nakshatraName": "Shatabhisha",
+            "nakshatraLord": "Rahu",
+            "pada": 2,
+            "house": 9,
+            "isRetrograde": true,
+            "dignity": "Neutral",
+            "navamsaSignId": 10,
+            "navamsaSignName": "Capricorn"
+          }
+        ],
+        "houses": [
+          {
+            "houseNumber": 1,
+            "signId": 3,
+            "signName": "Gemini",
+            "signSanskrit": "Mithuna",
+            "signLord": "Mercury",
+            "significations": "Self, Physical body, Vitality, Temperament, Complexion, Longevity",
+            "planetsInHouse": [],
+            "aspectingPlanets": [
+              "Moon",
+              "Jupiter",
+              "Saturn",
+              "Ketu"
+            ]
+          },
+          {
+            "houseNumber": 2,
+            "signId": 4,
+            "signName": "Cancer",
+            "signSanskrit": "Karka",
+            "signLord": "Moon",
+            "significations": "Wealth, Family, Speech, Eyes, Food habits, Accumulated assets",
+            "planetsInHouse": [],
+            "aspectingPlanets": [
+              "Mars"
+            ]
+          },
+          {
+            "houseNumber": 3,
+            "signId": 5,
+            "signName": "Leo",
+            "signSanskrit": "Simha",
+            "signLord": "Sun",
+            "significations": "Courage, Younger siblings, Communication, Effort, Short travels, Talents",
+            "planetsInHouse": [
+              "Rahu"
+            ],
+            "aspectingPlanets": [
+              "Jupiter",
+              "Ketu"
+            ]
+          },
+          {
+            "houseNumber": 4,
+            "signId": 6,
+            "signName": "Virgo",
+            "signSanskrit": "Kanya",
+            "signLord": "Mercury",
+            "significations": "Mother, Home, Land, Vehicles, Peace of mind, Emotional security",
+            "planetsInHouse": [],
+            "aspectingPlanets": [
+              "Venus"
+            ]
+          },
+          {
+            "houseNumber": 5,
+            "signId": 7,
+            "signName": "Libra",
+            "signSanskrit": "Tula",
+            "signLord": "Venus",
+            "significations": "Intelligence, Children, Creativity, Past life merits (Purva Punya), Romance",
+            "planetsInHouse": [],
+            "aspectingPlanets": [
+              "Mars",
+              "Mercury",
+              "Jupiter",
+              "Saturn",
+              "Ketu"
+            ]
+          },
+          {
+            "houseNumber": 6,
+            "signId": 8,
+            "signName": "Scorpio",
+            "signSanskrit": "Vrishchika",
+            "signLord": "Mars",
+            "significations": "Health, Debts, Enemies, Daily work, Service, Overcoming obstacles",
+            "planetsInHouse": [],
+            "aspectingPlanets": [
+              "Sun",
+              "Mars"
+            ]
+          },
+          {
+            "houseNumber": 7,
+            "signId": 9,
+            "signName": "Sagittarius",
+            "signSanskrit": "Dhanu",
+            "signLord": "Jupiter",
+            "significations": "Marriage, Spouse, Business partnerships, Legal affairs, Public dealings",
+            "planetsInHouse": [
+              "Moon"
+            ],
+            "aspectingPlanets": [
+              "Rahu"
+            ]
+          },
+          {
+            "houseNumber": 8,
+            "signId": 10,
+            "signName": "Capricorn",
+            "signSanskrit": "Makara",
+            "signLord": "Saturn",
+            "significations": "Longevity, Sudden events, Mysteries, Occult knowledge, Transformation, Research",
+            "planetsInHouse": [],
+            "aspectingPlanets": [
+              "Saturn"
+            ]
+          },
+          {
+            "houseNumber": 9,
+            "signId": 11,
+            "signName": "Aquarius",
+            "signSanskrit": "Kumbha",
+            "signLord": "Saturn",
+            "significations": "Dharma, Fortune (Bhagya), Father, Higher learning, Philosophy, Long journeys",
+            "planetsInHouse": [
+              "Jupiter",
+              "Ketu"
+            ],
+            "aspectingPlanets": [
+              "Rahu"
+            ]
+          },
+          {
+            "houseNumber": 10,
+            "signId": 12,
+            "signName": "Pisces",
+            "signSanskrit": "Meena",
+            "signLord": "Jupiter",
+            "significations": "Career, Reputation, Profession, Status, Karma, Social achievements",
+            "planetsInHouse": [
+              "Venus"
+            ],
+            "aspectingPlanets": []
+          },
+          {
+            "houseNumber": 11,
+            "signId": 1,
+            "signName": "Aries",
+            "signSanskrit": "Mesha",
+            "signLord": "Mars",
+            "significations": "Gains (Labha), Income, Elder siblings, Hopes & Wishes, Social networks",
+            "planetsInHouse": [
+              "Mars",
+              "Mercury",
+              "Saturn"
+            ],
+            "aspectingPlanets": [
+              "Rahu"
+            ]
+          },
+          {
+            "houseNumber": 12,
+            "signId": 2,
+            "signName": "Taurus",
+            "signSanskrit": "Vrishabha",
+            "signLord": "Venus",
+            "significations": "Moksha, Spiritual liberation, Foreign travels, Expenses, Sleep, Subconscious",
+            "planetsInHouse": [
+              "Sun"
+            ],
+            "aspectingPlanets": []
+          }
+        ],
+        "navamsaChart": {
+          "planets": [
+            {
+              "name": "Sun",
+              "signId": 10,
+              "signName": "Capricorn",
+              "house": 12
+            },
+            {
+              "name": "Moon",
+              "signId": 4,
+              "signName": "Cancer",
+              "house": 6
+            },
+            {
+              "name": "Mars",
+              "signId": 9,
+              "signName": "Sagittarius",
+              "house": 11
+            },
+            {
+              "name": "Mercury",
+              "signId": 2,
+              "signName": "Taurus",
+              "house": 4
+            },
+            {
+              "name": "Jupiter",
+              "signId": 3,
+              "signName": "Gemini",
+              "house": 5
+            },
+            {
+              "name": "Venus",
+              "signId": 9,
+              "signName": "Sagittarius",
+              "house": 11
+            },
+            {
+              "name": "Saturn",
+              "signId": 2,
+              "signName": "Taurus",
+              "house": 4
+            },
+            {
+              "name": "Rahu",
+              "signId": 4,
+              "signName": "Cancer",
+              "house": 6
+            },
+            {
+              "name": "Ketu",
+              "signId": 10,
+              "signName": "Capricorn",
+              "house": 12
+            }
+          ],
+          "lagnaSignId": 11,
+          "lagnaSignName": "Aquarius"
+        },
+        "yogas": [
+          {
+            "name": "Malavya Yoga (Mahapurusha)",
+            "type": "Benefic",
+            "description": "Venus occupies a Kendra house in Taurus, Libra, or Pisces.",
+            "planetsInvolved": [
+              "Venus"
+            ],
+            "effects": "Artistic talent, refined luxury, charismatic aura, beauty, and marital joy."
+          }
+        ],
+        "birthDetails": {
+          "name": "Vidushi",
+          "date": "1998-05-15",
+          "time": "08:30",
+          "place": "New Delhi",
+          "country": "India",
+          "latitude": 28.6139,
+          "longitude": 77.209,
+          "timezone": 5.5
+        }
+      },
+      "createdAt": "2026-11-23T16:30:48.932Z"
     }
   ],
   "conversations": [
