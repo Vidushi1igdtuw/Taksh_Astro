@@ -22,6 +22,13 @@ import {
   Lock,
 } from "lucide-react";
 
+interface NavLinkItem {
+  name: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: string;
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
@@ -29,14 +36,14 @@ export default function Navbar() {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   // When logged out, only Landing, Learn, and Pricing are public
-  const publicLinks = [
+  const publicLinks: NavLinkItem[] = [
     { name: "Home", href: "/", icon: Sparkles },
     { name: "Learn", href: "/learn", icon: BookOpen },
     { name: "Pricing", href: "/pricing", icon: Crown },
   ];
 
   // When logged in, all astrological features are active
-  const authenticatedLinks = [
+  const authenticatedLinks: NavLinkItem[] = [
     { name: "Kundli", href: "/kundli", icon: Compass },
     { name: "Horoscope", href: "/horoscope", icon: Sparkles },
     { name: "AI Astrologer", href: "/ai-astrologer", icon: MessageSquare, badge: "AI" },
