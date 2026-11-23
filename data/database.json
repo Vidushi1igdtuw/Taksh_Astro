@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_1",
+      "name": "Astroverse Admin",
+      "email": "admin@astroverse.com",
+      "passwordHash": "$2b$10$thxHuuNLpManc2KYNsVHAuy5Zqerd6x09WhOiHvbuHC6OIPbizFM2",
+      "role": "admin",
+      "tier": "premium",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "usr_demo_2",
+      "name": "Aryavrat Sharma",
+      "email": "user@astroverse.com",
+      "passwordHash": "$2b$10$thxHuuNLpManc2KYNsVHAubV//hTbtLuCYclKd88F7sQnO71yy6Pi",
+      "role": "user",
+      "tier": "pro",
+      "createdAt": "2026-02-15T10:30:00.000Z",
+      "updatedAt": "2026-02-15T10:30:00.000Z"
+    }
+  ],
+  "birthProfiles": [
+    {
+      "id": "prof_sample_1",
+      "userId": "usr_demo_2",
+      "name": "Aryavrat Sharma",
+      "birthDate": "1995-10-24",
+      "birthTime": "07:30",
+      "place": "New Delhi",
+      "country": "India",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "timezone": 5.5,
+      "gender": "Male",
+      "createdAt": "2026-02-15T10:35:00.000Z"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv_sample_1",
+      "userId": "usr_demo_2",
+      "title": "Career & Dasha Analysis",
+      "messages": [
+        {
+          "id": "msg_1",
+          "role": "user",
+          "content": "What does my 10th house indicate for career prospects in technology and leadership?",
+          "timestamp": "2026-02-15T10:40:00.000Z"
+        },
+        {
+          "id": "msg_2",
+          "role": "assistant",
+          "content": "Namaste Aryavrat. In your Vedic birth chart, your 10th house of Karma & Profession is ruled by the Sun. With Sun favorably placed and blessed by Jupiter's divine Drishti (5th aspect), you have strong executive potential. Your current Rahu Mahadasha with Jupiter Antardasha activates high growth in innovative, technology-driven, and strategic fields.",
+          "timestamp": "2026-02-15T10:40:15.000Z"
+        }
+      ],
+      "createdAt": "2026-02-15T10:40:00.000Z",
+      "updatedAt": "2026-02-15T10:40:15.000Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub_1",
+      "userId": "usr_demo_2",
+      "planId": "pro",
+      "status": "active",
+      "amount": 999,
+      "currency": "INR",
+      "razorpayPaymentId": "pay_sample_test_123",
+      "startDate": "2026-02-15T10:30:00.000Z",
+      "endDate": "2027-02-15T10:30:00.000Z",
+      "createdAt": "2026-02-15T10:30:00.000Z"
+    }
+  ],
+  "adminSettings": {
+    "systemNotice": "Cosmic alignments are particularly potent during this month's Guru-Shukra transit.",
+    "aiRateLimitPerDay": {
+      "free": 5,
+      "pro": 50,
+      "premium": 200
+    },
+    "totalAiQueriesCount": 148
+  }
+}
