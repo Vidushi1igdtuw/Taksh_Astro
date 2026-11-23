@@ -94,8 +94,8 @@ function RegisterContent() {
       birthTime,
       place: selectedCity.name,
       country: selectedCity.country,
-      latitude: selectedCity.lat,
-      longitude: selectedCity.lon,
+      latitude: selectedCity.latitude,
+      longitude: selectedCity.longitude,
       timezone: selectedCity.timezone,
       gender,
     });
@@ -310,7 +310,7 @@ function RegisterContent() {
                           {c.name}, <span className="text-slate-400">{c.country}</span>
                         </span>
                         <span className="text-[10px] text-slate-500">
-                          {c.lat.toFixed(2)}°N, {c.lon.toFixed(2)}°E (UTC{c.timezone >= 0 ? `+${c.timezone}` : c.timezone})
+                          {c.latitude.toFixed(2)}°N, {c.longitude.toFixed(2)}°E (UTC{c.timezone >= 0 ? `+${c.timezone}` : c.timezone})
                         </span>
                       </button>
                     ))}
@@ -322,7 +322,7 @@ function RegisterContent() {
               <div className="mt-2 flex items-center gap-2 text-[10px] text-slate-400 bg-black/40 px-3 py-1.5 rounded-lg border border-white/5">
                 <span className="text-amber-400 font-semibold">Active Coordinates:</span>
                 <span>
-                  {selectedCity.name} ({selectedCity.lat.toFixed(4)}°, {selectedCity.lon.toFixed(4)}°, Timezone: UTC{selectedCity.timezone >= 0 ? `+${selectedCity.timezone}` : selectedCity.timezone})
+                  {selectedCity.name} ({selectedCity.latitude.toFixed(4)}°, {selectedCity.longitude.toFixed(4)}°, Timezone: UTC{selectedCity.timezone >= 0 ? `+${selectedCity.timezone}` : selectedCity.timezone})
                 </span>
               </div>
             </div>
