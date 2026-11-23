@@ -13,6 +13,7 @@ export interface UserProfile {
 
 export interface SavedProfile {
   id: string;
+  userId: string;
   name: string;
   birthDate: string;
   birthTime: string;
@@ -21,7 +22,22 @@ export interface SavedProfile {
   latitude: number;
   longitude: number;
   timezone: number;
+  gender?: string;
   chartData?: KundliData;
+}
+
+export interface RegisterPayload {
+  name: string;
+  email: string;
+  password: string;
+  birthDate?: string;
+  birthTime?: string;
+  place?: string;
+  country?: string;
+  latitude?: number;
+  longitude?: number;
+  timezone?: number;
+  gender?: string;
 }
 
 interface AuthContextType {
@@ -32,7 +48,7 @@ interface AuthContextType {
   setActiveKundli: (k: KundliData | null) => void;
   savedProfiles: SavedProfile[];
   login: (email: string, pass: string) => Promise<{ success: boolean; error?: string }>;
-  register: (name: string, email: string, pass: string) => Promise<{ success: boolean; error?: string }>;
+  register: (payload: RegisterPayload) => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
   refreshUser: () => Promise<void>;
 }
@@ -52,7 +68,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (res.ok) {
         const data = await res.json();
         setUser(data.user);
-        setSavedProfiles(data.profiles || []);
+        const profiles: SavedProfile[] = data.profiles || [];
+        setSavedProfiles(profiles);
+
+        // If active chart not yet loaded, use primary saved profile's chart
+        if (profiles.length > 0 && profiles[0].chartData) {
+          setActiveKundli((prev) => prev || profiles[0].chartData || null);
+        }
       } else {
         setUser(null);
       }
@@ -87,12 +109,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const register = async (name: string, email: string, pass: string) => {
+  const register = async (payload: RegisterPayload) => {
     try {
       const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password: pass }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -100,6 +122,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
       setUser(data.user);
       setToken(data.token);
+      if (data.kundli) {
+        setActiveKundli(data.kundli);
+      }
       await refreshUser();
       return { success: true };
     } catch (err: any) {
@@ -111,6 +136,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     document.cookie = "astro_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     setUser(null);
     setToken(null);
+    setActiveKundli(null);
     setSavedProfiles([]);
   };
 

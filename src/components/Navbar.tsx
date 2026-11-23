@@ -14,12 +14,12 @@ import {
   Clock,
   BookOpen,
   Award,
-  User,
   LogOut,
   Menu,
   X,
   Crown,
   LayoutDashboard,
+  Lock,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -28,7 +28,15 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
-  const navLinks = [
+  // When logged out, only Landing, Learn, and Pricing are public
+  const publicLinks = [
+    { name: "Home", href: "/", icon: Sparkles },
+    { name: "Learn", href: "/learn", icon: BookOpen },
+    { name: "Pricing", href: "/pricing", icon: Crown },
+  ];
+
+  // When logged in, all astrological features are active
+  const authenticatedLinks = [
     { name: "Kundli", href: "/kundli", icon: Compass },
     { name: "Horoscope", href: "/horoscope", icon: Sparkles },
     { name: "AI Astrologer", href: "/ai-astrologer", icon: MessageSquare, badge: "AI" },
@@ -40,6 +48,8 @@ export default function Navbar() {
     { name: "Learn", href: "/learn", icon: BookOpen },
     { name: "Pricing", href: "/pricing", icon: Crown },
   ];
+
+  const activeLinks = user ? authenticatedLinks : publicLinks;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-cosmic-950/80 backdrop-blur-xl transition-all">
@@ -64,7 +74,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center gap-1">
-            {navLinks.map((link) => {
+            {activeLinks.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.href;
               return (
@@ -178,7 +188,7 @@ export default function Navbar() {
                   href="/register"
                   className="px-4 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-cosmic-950 shadow-md shadow-amber-500/20 transition-all hover:scale-105"
                 >
-                  Get Started
+                  Create Account
                 </Link>
               </div>
             )}
@@ -199,7 +209,7 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="xl:hidden border-t border-white/10 bg-cosmic-950/95 backdrop-blur-2xl px-4 py-4 space-y-2">
-          {navLinks.map((link) => {
+          {activeLinks.map((link) => {
             const Icon = link.icon;
             const isActive = pathname === link.href;
             return (
@@ -272,7 +282,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-center py-2 rounded-lg text-sm font-semibold bg-amber-400 text-cosmic-950 shadow-md shadow-amber-500/20"
                 >
-                  Register
+                  Create Account
                 </Link>
               </div>
             )}
