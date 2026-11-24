@@ -79,14 +79,35 @@ export interface DatabaseSchema {
   };
 }
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const DB_FILE = path.join(DATA_DIR, "database.json");
+// Detect serverless environment (Vercel, AWS Lambda, Netlify functions)
+const IS_SERVERLESS = Boolean(
+  process.env.VERCEL ||
+  process.env.AWS_LAMBDA_FUNCTION_NAME ||
+  process.env.LAMBDA_TASK_ROOT ||
+  (process.env.NODE_ENV === "production" && process.platform !== "win32")
+);
 
-function ensureDirectoryExists() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+function getStoragePaths() {
+  if (IS_SERVERLESS) {
+    const tmpDir = path.join("/tmp", "astroverse_data");
+    return {
+      dataDir: tmpDir,
+      dbFile: path.join(tmpDir, "database.json"),
+      seedFile: path.join(process.cwd(), "data", "database.json"),
+      isServerless: true,
+    };
   }
+
+  const localDir = path.join(process.cwd(), "data");
+  return {
+    dataDir: localDir,
+    dbFile: path.join(localDir, "database.json"),
+    seedFile: path.join(localDir, "database.json"),
+    isServerless: false,
+  };
 }
+
+let cachedDb: DatabaseSchema | null = null;
 
 // Initial seed data
 function getInitialData(): DatabaseSchema {
@@ -186,27 +207,74 @@ function getInitialData(): DatabaseSchema {
 }
 
 export function readDatabase(): DatabaseSchema {
-  ensureDirectoryExists();
-  if (!fs.existsSync(DB_FILE)) {
-    const initial = getInitialData();
-    fs.writeFileSync(DB_FILE, JSON.stringify(initial, null, 2), "utf8");
-    return initial;
-  }
+  if (cachedDb) return cachedDb;
+
+  const { dataDir, dbFile, seedFile, isServerless } = getStoragePaths();
+
   try {
-    const content = fs.readFileSync(DB_FILE, "utf8");
-    return JSON.parse(content);
-  } catch {
-    const initial = getInitialData();
-    fs.writeFileSync(DB_FILE, JSON.stringify(initial, null, 2), "utf8");
-    return initial;
+    if (isServerless && !fs.existsSync(dbFile)) {
+      if (!fs.existsSync(dataDir)) {
+        try {
+          fs.mkdirSync(dataDir, { recursive: true });
+        } catch {}
+      }
+      if (fs.existsSync(seedFile)) {
+        try {
+          const seedContent = fs.readFileSync(seedFile, "utf8");
+          try {
+            fs.writeFileSync(dbFile, seedContent, "utf8");
+          } catch {}
+          cachedDb = JSON.parse(seedContent);
+          return cachedDb!;
+        } catch {}
+      }
+    }
+
+    if (!fs.existsSync(dbFile)) {
+      if (!fs.existsSync(dataDir)) {
+        try {
+          fs.mkdirSync(dataDir, { recursive: true });
+        } catch {}
+      }
+      const initial = getInitialData();
+      try {
+        fs.writeFileSync(dbFile, JSON.stringify(initial, null, 2), "utf8");
+      } catch {}
+      cachedDb = initial;
+      return cachedDb;
+    }
+
+    const content = fs.readFileSync(dbFile, "utf8");
+    cachedDb = JSON.parse(content);
+    return cachedDb!;
+  } catch (err) {
+    console.warn("[Database] Read warning, initializing in-memory fallback:", err);
+    if (!cachedDb) {
+      cachedDb = getInitialData();
+    }
+    return cachedDb;
   }
 }
 
 export function writeDatabase(data: DatabaseSchema): void {
-  ensureDirectoryExists();
-  const tmpFile = `${DB_FILE}.tmp`;
-  fs.writeFileSync(tmpFile, JSON.stringify(data, null, 2), "utf8");
-  fs.renameSync(tmpFile, DB_FILE);
+  cachedDb = data; // Keep in-memory cache synchronized immediately
+
+  const { dataDir, dbFile } = getStoragePaths();
+
+  try {
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+    const tmpFile = `${dbFile}.tmp`;
+    fs.writeFileSync(tmpFile, JSON.stringify(data, null, 2), "utf8");
+    fs.renameSync(tmpFile, dbFile);
+  } catch (err: any) {
+    console.warn(
+      "[Database] Non-fatal filesystem write warning (cached in memory):",
+      err?.message || err
+    );
+    // On serverless / read-only container hosts, cachedDb remains updated so operations succeed without throwing EROFS
+  }
 }
 
 // User Helpers
