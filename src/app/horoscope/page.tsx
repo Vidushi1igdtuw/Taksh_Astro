@@ -85,11 +85,10 @@ export default function HoroscopePage() {
               <button
                 key={tf}
                 onClick={() => setTimeframe(tf)}
-                className={`px-4 py-1.5 rounded-lg font-bold capitalize transition-all ${
-                  timeframe === tf
-                    ? "bg-amber-400 text-cosmic-950 shadow-md shadow-amber-500/20"
-                    : "text-slate-300 hover:text-white"
-                }`}
+                className={`px-4 py-1.5 rounded-lg font-bold capitalize transition-all ${timeframe === tf
+                  ? "bg-amber-400 text-cosmic-950 shadow-md shadow-amber-500/20"
+                  : "text-slate-300 hover:text-white"
+                  }`}
               >
                 {tf}
               </button>
@@ -103,11 +102,10 @@ export default function HoroscopePage() {
                 setUsePersonalized(!usePersonalized);
                 if (!usePersonalized) setSelectedSign(activeKundli.moonSign.signName);
               }}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
-                usePersonalized
-                  ? "bg-purple-500/20 text-purple-200 border-purple-400/50"
-                  : "bg-white/5 text-slate-400 border-white/10 hover:text-white"
-              }`}
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold border transition-all ${usePersonalized
+                ? "bg-purple-500/20 text-purple-200 border-purple-400/50"
+                : "bg-white/5 text-slate-400 border-white/10 hover:text-white"
+                }`}
             >
               <Sparkles className="w-3.5 h-3.5 text-purple-400" />
               <span>
@@ -134,11 +132,10 @@ export default function HoroscopePage() {
                   setSelectedSign(sign.name);
                   setUsePersonalized(false);
                 }}
-                className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
-                  isSelected
-                    ? "bg-amber-400 text-cosmic-950 font-black shadow-lg shadow-amber-500/30 scale-105"
-                    : "glass-panel text-slate-300 hover:text-white hover:border-amber-400/40"
-                }`}
+                className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${isSelected
+                  ? "bg-amber-400 text-cosmic-950 font-black shadow-lg shadow-amber-500/30 scale-105"
+                  : "glass-panel text-slate-300 hover:text-white hover:border-amber-400/40"
+                  }`}
               >
                 <span className="text-sm">{sign.symbol}</span>
                 <span>{sign.name}</span>

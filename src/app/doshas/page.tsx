@@ -128,11 +128,10 @@ export default function DoshasPage() {
                 </div>
 
                 <span
-                  className={`px-3 py-1 rounded-full font-bold text-xs border ${
-                    report.kaalSarpDosha.isPresent
-                      ? "bg-purple-500/20 text-purple-300 border-purple-500/40"
-                      : "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
-                  }`}
+                  className={`px-3 py-1 rounded-full font-bold text-xs border ${report.kaalSarpDosha.isPresent
+                    ? "bg-purple-500/20 text-purple-300 border-purple-500/40"
+                    : "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
+                    }`}
                 >
                   {report.kaalSarpDosha.isPresent
                     ? `${report.kaalSarpDosha.type} (${report.kaalSarpDosha.isPurna ? "Purna" : "Anshik"})`
@@ -140,119 +139,116 @@ export default function DoshasPage() {
                 </span>
               </div>
 
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4">
-              {report.kaalSarpDosha.description}
-            </p>
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4">
+                {report.kaalSarpDosha.description}
+              </p>
 
-            <div className="pt-4 border-t border-white/10">
-              <span className="text-xs font-bold text-purple-300 block mb-2">Recommended Remedies:</span>
-              <ul className="space-y-1.5 text-xs text-slate-300">
-                {report.kaalSarpDosha.remedies.map((rem, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-purple-400 font-bold">•</span>
-                    <span>{rem}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* 3. SHANI SADE SATI TRACKER */}
-          <div className="p-6 sm:p-8 rounded-2xl glass-card border border-blue-500/30 shadow-2xl">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
-                  <Clock className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Shani Sade Sati & Dhaiya Tracker</h3>
-                  <span className="text-xs text-slate-400">
-                    Live Saturn transit relative to natal Moon in {report.sadeSati.natalMoonSign}
-                  </span>
-                </div>
+              <div className="pt-4 border-t border-white/10">
+                <span className="text-xs font-bold text-purple-300 block mb-2">Recommended Remedies:</span>
+                <ul className="space-y-1.5 text-xs text-slate-300">
+                  {report.kaalSarpDosha.remedies.map((rem, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-purple-400 font-bold">•</span>
+                      <span>{rem}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
+            </div>
 
-              <span
-                className={`px-3 py-1 rounded-full font-bold text-xs border ${
-                  report.sadeSati.status === "None"
+            {/* 3. SHANI SADE SATI TRACKER */}
+            <div className="p-6 sm:p-8 rounded-2xl glass-card border border-blue-500/30 shadow-2xl">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+                    <Clock className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Shani Sade Sati & Dhaiya Tracker</h3>
+                    <span className="text-xs text-slate-400">
+                      Live Saturn transit relative to natal Moon in {report.sadeSati.natalMoonSign}
+                    </span>
+                  </div>
+                </div>
+
+                <span
+                  className={`px-3 py-1 rounded-full font-bold text-xs border ${report.sadeSati.status === "None"
                     ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
                     : "bg-blue-500/20 text-blue-300 border-blue-500/40"
-                }`}
-              >
-                {report.sadeSati.status}
-              </span>
+                    }`}
+                >
+                  {report.sadeSati.status}
+                </span>
+              </div>
+
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4">
+                {report.sadeSati.explanation}
+              </p>
+
+              <div className="pt-4 border-t border-white/10">
+                <span className="text-xs font-bold text-blue-300 block mb-2">Saturn Pacification Remedies:</span>
+                <ul className="space-y-1.5 text-xs text-slate-300">
+                  {report.sadeSati.remedies.map((rem, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-blue-400 font-bold">•</span>
+                      <span>{rem}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4">
-              {report.sadeSati.explanation}
-            </p>
-
-            <div className="pt-4 border-t border-white/10">
-              <span className="text-xs font-bold text-blue-300 block mb-2">Saturn Pacification Remedies:</span>
-              <ul className="space-y-1.5 text-xs text-slate-300">
-                {report.sadeSati.remedies.map((rem, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-blue-400 font-bold">•</span>
-                    <span>{rem}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* 4. PITRA & GURU CHANDAL COMBINATIONS */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-3">
-              <div className="flex items-center justify-between">
-                <h4 className="text-sm font-bold text-white">Pitra Dosha</h4>
-                <span
-                  className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                    report.pitraDosha.isPresent
+            {/* 4. PITRA & GURU CHANDAL COMBINATIONS */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-bold text-white">Pitra Dosha</h4>
+                  <span
+                    className={`px-2 py-0.5 rounded text-[10px] font-bold ${report.pitraDosha.isPresent
                       ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
                       : "bg-emerald-500/20 text-emerald-300"
-                  }`}
-                >
-                  {report.pitraDosha.isPresent ? report.pitraDosha.intensity : "None"}
-                </span>
+                      }`}
+                  >
+                    {report.pitraDosha.isPresent ? report.pitraDosha.intensity : "None"}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {report.pitraDosha.description}
+                </p>
+                <div className="pt-2">
+                  <span className="text-[11px] font-bold text-amber-400 block mb-1">Pitra Remedy:</span>
+                  <span className="text-xs text-slate-400">{report.pitraDosha.remedies[0]}</span>
+                </div>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                {report.pitraDosha.description}
-              </p>
-              <div className="pt-2">
-                <span className="text-[11px] font-bold text-amber-400 block mb-1">Pitra Remedy:</span>
-                <span className="text-xs text-slate-400">{report.pitraDosha.remedies[0]}</span>
-              </div>
-            </div>
 
-            <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-3">
-              <div className="flex items-center justify-between">
-                <h4 className="text-sm font-bold text-white">Guru Chandal Yoga</h4>
-                <span
-                  className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                    report.guruChandalDosha.isPresent
+              <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-bold text-white">Guru Chandal Yoga</h4>
+                  <span
+                    className={`px-2 py-0.5 rounded text-[10px] font-bold ${report.guruChandalDosha.isPresent
                       ? "bg-purple-500/20 text-purple-300 border border-purple-500/40"
                       : "bg-emerald-500/20 text-emerald-300"
-                  }`}
-                >
-                  {report.guruChandalDosha.isPresent ? "Detected" : "None"}
-                </span>
-              </div>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                {report.guruChandalDosha.description}
-              </p>
-              <div className="pt-2">
-                <span className="text-[11px] font-bold text-purple-400 block mb-1">Guru Remedy:</span>
-                <span className="text-xs text-slate-400">{report.guruChandalDosha.remedies[0]}</span>
+                      }`}
+                  >
+                    {report.guruChandalDosha.isPresent ? "Detected" : "None"}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {report.guruChandalDosha.description}
+                </p>
+                <div className="pt-2">
+                  <span className="text-[11px] font-bold text-purple-400 block mb-1">Guru Remedy:</span>
+                  <span className="text-xs text-slate-400">{report.guruChandalDosha.remedies[0]}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div className="p-16 text-center">
-          <Loader2 className="w-8 h-8 animate-spin text-amber-400 mx-auto" />
-        </div>
-      )}
-    </div>
+        ) : (
+          <div className="p-16 text-center">
+            <Loader2 className="w-8 h-8 animate-spin text-amber-400 mx-auto" />
+          </div>
+        )}
+      </div>
     </AuthGuard>
   );
 }

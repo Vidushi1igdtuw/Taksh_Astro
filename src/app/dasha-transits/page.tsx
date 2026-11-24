@@ -146,11 +146,10 @@ export default function DashaTransitsPage() {
                   {dashaData.currentMahadasha.subPeriods?.map((sub) => (
                     <div
                       key={sub.planet}
-                      className={`p-3 rounded-xl border text-xs transition-all ${
-                        sub.isCurrent
-                          ? "bg-amber-400 text-cosmic-950 font-bold border-amber-300 shadow-md scale-105"
-                          : "glass-panel border-white/10 text-slate-300"
-                      }`}
+                      className={`p-3 rounded-xl border text-xs transition-all ${sub.isCurrent
+                        ? "bg-amber-400 text-cosmic-950 font-bold border-amber-300 shadow-md scale-105"
+                        : "glass-panel border-white/10 text-slate-300"
+                        }`}
                     >
                       <span className="block font-bold text-sm">{sub.planet}</span>
                       <span className="text-[10px] block opacity-80 mt-0.5">
@@ -173,17 +172,15 @@ export default function DashaTransitsPage() {
                 {dashaData.mahadashas.map((m) => (
                   <div
                     key={m.planet + m.startDate}
-                    className={`p-3.5 rounded-xl border flex items-center justify-between transition-all ${
-                      m.isCurrent
-                        ? "bg-amber-500/15 border-amber-400/50 shadow-md text-amber-200"
-                        : "bg-cosmic-900/40 border-white/5 text-slate-300 hover:bg-white/5"
-                    }`}
+                    className={`p-3.5 rounded-xl border flex items-center justify-between transition-all ${m.isCurrent
+                      ? "bg-amber-500/15 border-amber-400/50 shadow-md text-amber-200"
+                      : "bg-cosmic-900/40 border-white/5 text-slate-300 hover:bg-white/5"
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       <div
-                        className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
-                          m.isCurrent ? "bg-amber-400 text-cosmic-950" : "bg-white/10 text-slate-300"
-                        }`}
+                        className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${m.isCurrent ? "bg-amber-400 text-cosmic-950" : "bg-white/10 text-slate-300"
+                          }`}
                       >
                         {m.planet.slice(0, 2)}
                       </div>
